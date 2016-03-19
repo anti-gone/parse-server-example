@@ -21,7 +21,15 @@ var api = new ParseServer({
         senderId: '867906234090',
         apiKey: 'AIzaSyCo1O9g8qUiLGYS3U-mrrRa2F3VImLfMX0'
       }// Don't forget to change to https if needed
+  },
+  
+  oauth: {
+   facebook: {
+     appIds: "1009819892367797"
+   }
   }
+
+
   
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
