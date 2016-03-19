@@ -1,4 +1,4 @@
-var Constants = require('cloud/constants.js');
+var Constants = require('./constants.js');
 
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 // For example:
