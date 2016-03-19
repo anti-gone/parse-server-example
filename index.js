@@ -18,7 +18,7 @@ var api = new ParseServer({
   ,serverURL: 'http://lmuecunicorn.herokuapp.com/parse',
    push: {
       android: {
-        senderId: '433102432148',
+        senderId: '867906234090',
         apiKey: 'AIzaSyCo1O9g8qUiLGYS3U-mrrRa2F3VImLfMX0'
       },
       ios: {/*
