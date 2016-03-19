@@ -20,14 +20,16 @@ var api = new ParseServer({
       android: {
         senderId: '867906234090',
         apiKey: 'AIzaSyCo1O9g8qUiLGYS3U-mrrRa2F3VImLfMX0'
-      },
-      ios: {/*
-        pfx: '/file/path/to/XXX.p12',
-        bundleId: '',
-        production: false
-      }*/
-    }// Don't forget to change to https if needed
+      }// Don't forget to change to https if needed
+  },
+  
+  oauth: {
+   facebook: {
+     appIds: "1009819892367797"
+   }
   }
+
+
   
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server

@@ -1,4 +1,4 @@
-var Constants = require('cloud/constants.js');
+var Constants = require('./constants.js');
 
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 // For example:
@@ -663,7 +663,10 @@ Parse.Cloud.afterDelete("Messages", function(request) {
 });
 
 
+//has to be replaced by some kind of cron job
+
 // background job for deleting invalid installations
+/*
 Parse.Cloud.job("deleteInstallations", function(request, status) {
 	Parse.Cloud.useMasterKey();
 
@@ -693,4 +696,4 @@ Parse.Cloud.job("deleteInstallations", function(request, status) {
         status.error("deleteInstallations - ERROR trying to delete invalid installation objects " + error.code + ": " + error.message);
     });
 });
-
+*/
