@@ -15,7 +15,18 @@ var api = new ParseServer({
   cloud:  __dirname + '/cloud/main.js',
   appId: 'ck6vEY86u2hwvlZiwYjbxW9zcmkVrq3MBRIHetgY',
   masterKey:  'SLZtu100g9idpw4UkCVHckvfzEJlBuMGBNnXA3sh' //Add your master key here. Keep it secret!
-  ,serverURL: 'http://lmuecunicorn.herokuapp.com/parse'  // Don't forget to change to https if needed
+  ,serverURL: 'http://lmuecunicorn.herokuapp.com/parse',
+   push: {
+      android: {
+        senderId: '433102432148',
+        apiKey: 'AIzaSyCo1O9g8qUiLGYS3U-mrrRa2F3VImLfMX0'
+      },
+      ios: {/*
+        pfx: '/file/path/to/XXX.p12',
+        bundleId: '',
+        production: false
+      }*/
+    }// Don't forget to change to https if needed
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
