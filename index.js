@@ -19,7 +19,7 @@ var api = new ParseServer({
    push: {
       android: {
         senderId: '867906234090',
-        apiKey: 'AIzaSyCo1O9g8qUiLGYS3U-mrrRa2F3VImLfMX0'
+        apiKey: 'AIzaSyDoo_NlO30MSwLOp4orNIGXGlmd7lZCwMc'
       }// Don't forget to change to https if needed
   },
   
