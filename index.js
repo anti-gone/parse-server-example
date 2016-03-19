@@ -51,3 +51,5 @@ var port = process.env.PORT || 1337;
 app.listen(port, function() {
     console.log('parse-server-example running on port ' + port + '.');
 });
+
+parse-dashboard --appId 'ck6vEY86u2hwvlZiwYjbxW9zcmkVrq3MBRIHetgY' --masterKey 'SLZtu100g9idpw4UkCVHckvfzEJlBuMGBNnXA3sh' --serverURL 'http://lmuecunicorn.herokuapp.com/parse' --appName lmuecunicorn;
