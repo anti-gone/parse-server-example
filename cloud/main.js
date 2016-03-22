@@ -129,6 +129,7 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 	},   { useMasterKey: true }, {
 		success: function() {
 			// Push was successful
+			console.log("success"+data);
 			response.success("success! : " + username + ", " + pushMessage);
 		},
 		error: function(error) {
