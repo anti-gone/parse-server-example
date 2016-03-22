@@ -125,14 +125,14 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			alert: pushMessage,
 			badge: "Increment",
 			sound: "Push_allert.caf",
-			otherUser: username,
+			//otherUser: username,
 			roomId: roomID
 		}
 		
 	}  , {
 		success: function() {
 			// Push was successful
-			console.log("success");
+			console.log("success "+data+ "is data");
 			response.success("success! : " + username + ", " + pushMessage);
 		},
 		error: function(error) {
