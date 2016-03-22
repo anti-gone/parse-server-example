@@ -80,6 +80,8 @@ Parse.Cloud.define("newUser", function(request, response) {
 // sending out a push notification when someone sent a message
 Parse.Cloud.define("sendMessagePush", function(request, response) {
 	
+	console.log("send message push called");
+	
 	//var username = request.user.get("fullname");
 	var username = request.user.get(Constants.UNICORN_USER_FULL_NAME);
 	var roomID = request.params.roomID;
@@ -128,6 +130,9 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			response.success("success! : " + username + ", " + pushMessage);
 		},
 		error: function(error) {
+			
+			console.log("push failed!");
+			
 			throw "Got an error " + error.code + " : " + error.message;
 			response.error("push failed!");
 		}
@@ -400,7 +405,7 @@ Parse.Cloud.afterSave(Parse.Installation, function(request) {
 */
 
 
-Parse.Cloud.beforeSave(Parse.User, function(request, response) {
+Parse.Cloud.beforeSave("_User", function(request, response) {
 	
 	if (request.object.dirty(Constants.UNICORN_USER_TRACKS_POINTER_ARRAY) && request.object.dirty(Constants.UNICORN_USER_EVENTS_POINTER_ARRAY)) {
 		// user has registered for a (new) track (and therefore event)
