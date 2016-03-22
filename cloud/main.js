@@ -135,7 +135,7 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			console.log("push failed!");
 			
 			throw "Got an error " + error.code + " : " + error.message;
-			response.error("push failed!");
+			response.error("push failed!" + error.code + " : " + error.message+" "+data);
 		}
 	});
 });
@@ -413,7 +413,7 @@ Parse.Cloud.beforeSave("_User", function(request, response) {
 		console.log(request);
 		console.log("Parse.User - beforeSave - tracks array dirty");
 		
-		Parse.Cloud.useMasterKey();
+		//Parse.Cloud.useMasterKey();
 		
 		var tracksArray = request.object.get(Constants.UNICORN_USER_TRACKS_POINTER_ARRAY);
 		// last object of the array is always the new object, in our case a pointer to a track object
@@ -425,7 +425,7 @@ Parse.Cloud.beforeSave("_User", function(request, response) {
 		}
 		var newTrack = tracksArray[tracksArray.length-1];
 		
-		newTrack.fetch().then(function(newTrack){
+		newTrack.fetch({useMasterKey: true}).then(function(newTrack){
 			
 			console.log("Parse.User - beforeSave - fetched new track object and ready to increment numberAttendants-field");
 			
