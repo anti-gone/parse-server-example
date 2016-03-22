@@ -116,6 +116,9 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
     //pushQuery.equalTo("newMessages", true);
     pushQuery.equalTo(Constants.UNICORN_INSTALLATION_USER_POINTER, {__type: "Pointer",className: "_User",objectId: receiverID});
 	
+
+	
+	
 	Parse.Push.send({
 		where: pushQuery,
 		data: {
@@ -138,8 +141,8 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			
 			throw "Got an error " + error.code + " : " + error.message;
 			response.error("push failed!");
-		}
-	}, { useMasterKey: true });
+		},
+	 useMasterKey: true });
 });
 
 // sending out a push notification to startups only that a new user has signed up
