@@ -126,10 +126,10 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			roomId: roomID
 		}
 		
-	},   { useMasterKey: true }, {
+	}  , {
 		success: function() {
 			// Push was successful
-			console.log("success"+data);
+			console.log("success");
 			response.success("success! : " + username + ", " + pushMessage);
 		},
 		error: function(error) {
@@ -139,7 +139,7 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			throw "Got an error " + error.code + " : " + error.message;
 			response.error("push failed!");
 		}
-	});
+	}, { useMasterKey: true });
 });
 
 // sending out a push notification to startups only that a new user has signed up
