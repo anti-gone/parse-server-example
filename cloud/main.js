@@ -125,7 +125,7 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			alert: pushMessage,
 			badge: "Increment",
 			sound: "Push_allert.caf",
-			//otherUser: username,
+			otherUser: username,
 			roomId: roomID
 		}
 		
