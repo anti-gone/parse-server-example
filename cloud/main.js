@@ -411,8 +411,12 @@ Parse.Cloud.beforeSave(Parse.User, function(request, response) {
 		
 		var tracksArray = request.object.get(Constants.UNICORN_USER_TRACKS_POINTER_ARRAY);
 		// last object of the array is always the new object, in our case a pointer to a track object
-		if (undefined != tracksArray)
+		if (undefined == tracksArray)
 		{
+				console.error("Parse.User - beforeSave - ERROR tracksarray is undefined " + eventError.code + ": " + eventError.message);
+				response.error("Parse.User - beforeSave - ERROR tracksarray is undefined " + eventError.code + ": " + eventError.message);
+			
+		}
 		var newTrack = tracksArray[tracksArray.length-1];
 		
 		newTrack.fetch().then(function(newTrack){
@@ -445,7 +449,7 @@ Parse.Cloud.beforeSave(Parse.User, function(request, response) {
 			response.error("Parse.User - beforeSave - ERROR fetching new track object " + trackError.code + ": " + trackError.message);
 		});
 	
-}
+
 	} else {
 		response.success();
 	}
