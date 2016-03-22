@@ -124,7 +124,8 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			sound: "Push_allert.caf",
 			otherUser: username,
 			roomId: roomID
-		}
+		},
+		 { useMasterKey: true }
 	}, {
 		success: function() {
 			// Push was successful
