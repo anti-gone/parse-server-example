@@ -411,6 +411,9 @@ Parse.Cloud.afterSave(Parse.Installation, function(request) {
 */
 
 
+//has to be uncommented again when finally working!!!
+
+/*
 Parse.Cloud.beforeSave("_User", function(request, response) {
 	
 	if (request.object.dirty(Constants.UNICORN_USER_TRACKS_POINTER_ARRAY) && request.object.dirty(Constants.UNICORN_USER_EVENTS_POINTER_ARRAY)) {
@@ -429,6 +432,7 @@ Parse.Cloud.beforeSave("_User", function(request, response) {
 				response.success();
 			
 		}*/
+/*
 		var newTrack = tracksArray[tracksArray.length-1];
 		
 		newTrack.fetch({useMasterKey: true}).then(function(newTrack){
@@ -466,7 +470,7 @@ Parse.Cloud.beforeSave("_User", function(request, response) {
 		response.success();
 	}
 });
-
+*/
 
 
 /*
