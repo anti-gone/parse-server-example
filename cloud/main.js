@@ -47,6 +47,11 @@ Parse.Cloud.define("updateGlobalCounters", function(request, response) {
 // sending out a push notification to all users only after the user has chosen skills and a startup/university
 Parse.Cloud.define("newUser", function(request, response) {
 	
+	if (undefined == request.user)
+	{
+		response.success("request.user is null");
+	}
+	
 	var username = request.user.get("fullname");
 	var isStudent = request.user.get("isStudent");
 	var user;
@@ -285,6 +290,15 @@ Parse.Cloud.define("profileUpdatedPushToStartups", function(request, response) {
 	var didEnablePushAgain = request.params.enabled;
 	var currentDate = new Date();
 	//var lastUpdateDate = request.user.get("profileUpdateDate");
+	
+	
+	//TODO: remove
+	if (undefined == request.user)
+	{
+		response.success("request user is null");
+		
+	}
+	
 	var lastUpdateDate = request.user.get(Constants.UNICORN_USER_PROFILE_UPDATE_DATE);
 	var diff = Math.abs(currentDate.getTime() - lastUpdateDate.getTime());	// in milliseconds
 	if (diff > 30*24*60*60*1000) {
