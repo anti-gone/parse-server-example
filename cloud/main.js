@@ -124,8 +124,8 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			sound: "Push_allert.caf",
 			otherUser: username,
 			roomId: roomID
-		},
-		 { useMasterKey: true }
+		}
+		
 	}, {
 		success: function() {
 			// Push was successful
@@ -138,7 +138,7 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 			throw "Got an error " + error.code + " : " + error.message;
 			response.error("push failed!");
 		}
-	});
+	},  { useMasterKey: true });
 });
 
 // sending out a push notification to startups only that a new user has signed up
