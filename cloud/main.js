@@ -413,8 +413,8 @@ Parse.Cloud.beforeSave(Parse.User, function(request, response) {
 		// last object of the array is always the new object, in our case a pointer to a track object
 		if (undefined == tracksArray)
 		{
-				console.error("Parse.User - beforeSave - ERROR tracksarray is undefined " + eventError.code + ": " + eventError.message);
-				response.error("Parse.User - beforeSave - ERROR tracksarray is undefined " + eventError.code + ": " + eventError.message);
+				console.error("Parse.User - beforeSave - ERROR tracksarray is undefined ");
+				response.error("Parse.User - beforeSave - ERROR tracksarray is undefined " );
 			
 		}
 		var newTrack = tracksArray[tracksArray.length-1];
