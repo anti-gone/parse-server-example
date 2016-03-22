@@ -404,6 +404,7 @@ Parse.Cloud.beforeSave(Parse.User, function(request, response) {
 	
 	if (request.object.dirty(Constants.UNICORN_USER_TRACKS_POINTER_ARRAY) && request.object.dirty(Constants.UNICORN_USER_EVENTS_POINTER_ARRAY)) {
 		// user has registered for a (new) track (and therefore event)
+		console.log(request);
 		console.log("Parse.User - beforeSave - tracks array dirty");
 		
 		Parse.Cloud.useMasterKey();
