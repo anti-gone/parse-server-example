@@ -132,10 +132,10 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 		},
 		error: function(error) {
 			
-			console.log("push failed!"+ error.code + " : " + error.message+" "+data);
+			console.log("push failed!"+ error.code + " : " + error.message);
 			
 			throw "Got an error " + error.code + " : " + error.message;
-			response.error("push failed!" + error.code + " : " + error.message+" "+data);
+			response.error("push failed!");
 		}
 	});
 });
