@@ -153,6 +153,13 @@ Parse.Cloud.define("sendMessagePush", function(request, response) {
 // sending out a push notification to startups only that a new user has signed up
 Parse.Cloud.define("studentPushNotificationToStartups", function(request, response) {
 	
+	
+	if (undefined == request.user)
+	{
+		response.succes("request user is null");
+		
+	}
+	
 	// get the name and the university of the user having called this function after onboarding/signup
 	//var username = request.user.get("fullname");
 	var username = request.user.get(Constants.UNICORN_USER_FULL_NAME);
