@@ -414,7 +414,7 @@ Parse.Cloud.beforeSave(Parse.User, function(request, response) {
 		if (undefined == tracksArray)
 		{
 				console.error("Parse.User - beforeSave - ERROR tracksarray is undefined ");
-				response.error("Parse.User - beforeSave - ERROR tracksarray is undefined " );
+				response.success();
 			
 		}
 		var newTrack = tracksArray[tracksArray.length-1];
